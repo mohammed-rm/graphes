@@ -154,7 +154,7 @@
     <ClCompile Include="CArc.cpp" />
     <ClCompile Include="CGraphe.cpp" />
     <ClCompile Include="CSommet.cpp" />
-    <ClCompile Include="ProjetGraph.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CArc.h" />

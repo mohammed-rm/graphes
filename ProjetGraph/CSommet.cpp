@@ -13,6 +13,8 @@ CSommet::CSommet(CSommet &SOMArg) {
 	uiSOMNumeroS = SOMArg.uiSOMNumeroS;
 	uiSOMTailleArrivant = SOMArg.uiSOMTailleArrivant;
 	uiSOMTaillePartant = SOMArg.uiSOMTaillePartant;
+	pSOMArcArrivant = (CArc**)malloc(sizeof(CArc*));
+	pSOMArcPartant = (CArc**)malloc(sizeof(CArc*));
 
 	for (unsigned int iBoucleA = 0; iBoucleA <= uiSOMTailleArrivant; iBoucleA++) {
 		pSOMArcArrivant[iBoucleA] = SOMArg.pSOMArcArrivant[iBoucleA];
@@ -72,4 +74,15 @@ void CSommet::SOMAjouterArcArrivant(int iARCarg) {
 
 void CSommet::SOMSupprimerArcArrivant(int ARCarg) {}
 
-void CSommet::SOMAffichage() {}
+void CSommet::SOMAffichage() {
+	cout << "Numero du sommet : " << uiSOMNumeroS << endl;
+	cout << "Liste arcs arrivant : ";
+	for (unsigned int iBoucle = 0; iBoucle < uiSOMTailleArrivant; iBoucle++) {
+		cout << pSOMArcArrivant[iBoucle]->ARCGetDestination() << ' ';
+	}
+	cout << endl << "Liste arcs partant : ";
+	for (unsigned int iBoucle = 0; iBoucle < uiSOMTaillePartant; iBoucle++) {
+		cout << pSOMArcPartant[iBoucle]->ARCGetDestination() << ' ';
+	}
+	cout << endl;
+}
