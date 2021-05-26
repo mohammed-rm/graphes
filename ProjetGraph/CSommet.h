@@ -20,6 +20,9 @@ public:
 	//Constructeur par recopie
 	CSommet(CSommet &SOMArg);
 
+	//Constructeur par arguments
+	CSommet(unsigned int uiNumSom);
+
 	//Destructeur par defaut
 	~CSommet();
 
@@ -30,6 +33,39 @@ public:
 	   * Post-condition : rien
 	  */
 	unsigned int SOMGetNumero();
+
+	/*
+	   * Entrée : rien
+	   * Sortie : La taille du tableau des arcs arrivant
+	   * Pré-condition : rien
+	   * Post-condition : rien
+	  */
+	unsigned int SOMGetTailleArrivant();
+
+	/*
+	   * Entrée : Numero a donner pour le sommet
+	   * Sortie : rien
+	   * Pré-condition : rien
+	   * Post-condition : met a jour le numero du sommet
+	  */
+	void SOMSetTailleArrivant(unsigned int uiSOMArg);
+
+
+	/*
+	   * Entrée : rien
+	   * Sortie : La taille du tableau des arcs Partant
+	   * Pré-condition : rien
+	   * Post-condition : rien
+	  */
+	unsigned int SOMGetTaillePartant();
+
+	/*
+	   * Entrée : Numero a donner pour le sommet
+	   * Sortie : rien
+	   * Pré-condition : rien
+	   * Post-condition : met a jour le numero du sommet
+	  */
+	void SOMSetTaillePartant(unsigned int uiSOMArg);
 
 	/*
 	   * Entrée : Numero a donner pour le sommet

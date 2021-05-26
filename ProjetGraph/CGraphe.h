@@ -2,14 +2,18 @@
 #define CGRAPHE_H 2
 
 #include "CSommet.h"
+#include "CParser.h"
 #include <cstring>
 #include <fstream>
 #include "CException.h"
 #include <stdlib.h>
+
+#define EXC_Failed_Parser 0
+
 class CGraphe {
 	//Attributs
 private:
-	CSommet** TGRASommet;
+	CSommet* TGRASommet;
 	unsigned int uiGRANbrSommet;
 public:
 	//Methodes
@@ -21,13 +25,16 @@ public:
 	//Constructeur par recopie
 	CGraphe(CGraphe & GRAArg);
 
+	//Constructeur par Parseur
+	CGraphe(CParser & PARArg);
+
 	/*
 	entree : un tableau contenant les sommets et le nombre de sommet dans le graphe
 	sortie : rien
 	Pre-condition : rien
 	Post-condition : creer un graphe avec ses sommets et met a jour son nombre
 	*/
-	CGraphe(CSommet** pSOMArg, unsigned int uiNombreSommet);
+	CGraphe(CSommet* pSOMArg, unsigned int uiNombreSommet);
 
 
 	/*
@@ -52,15 +59,21 @@ public:
 	*/
 	CGraphe & operator=(CGraphe & GRAArg);
 
-
+	/*
+	  entree : Numero du sommet dont on veut l'index
+	  sortie : l'index du sommet dans le tableau
+	  Pre-condition : rien
+	  Post-condition : rien
+	  */
+	unsigned int GRAGetIndexSom(unsigned int uiNumeroSom);
 
 	/*
-	entree : un numero
+	entree : rien
 	sortie : rien
 	Pre-condition : rien
-	Post-condition : recupere un sommet a partir de son numero
+	Post-condition : recupere le nombre de sommet dans le graphe
 	*/
-	CSommet* GRAGetSommet(unsigned int uiNumero);
+	unsigned int GRAGetNbSommet();
 
 	/*
 	entree : un tableau de sommet
@@ -68,7 +81,7 @@ public:
 	Pre-condition : rien
 	Post-condition : ajoute un tableau de sommet au graphe
 	*/
-	void GRASetSommet(CSommet** pSOMArg, unsigned int uiNombreSommet);
+	void GRASetSommet(CSommet* pSOMArg, unsigned int uiNombreSommet);
 
 
 	/*
@@ -80,7 +93,7 @@ public:
 	void GRAAddSommet(CSommet & pSOMArg);
 
 	/*
-	entree : un natuel
+	entree : un numero naturel
 	sortie : rien
 	Pre-condition : rien
 	Post-condition : supprime un sommet du graphe a partir de son numero
@@ -91,8 +104,6 @@ public:
 	//Methode d'affichage d'un graphe
 	void GRAAffiche();
 
-	//Methode dde lecture d'un fichier
-	void GRALirefichier(char* pcNomFichier);
 
 };
 #endif

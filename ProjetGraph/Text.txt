@@ -1,0 +1,26 @@
+NBSommets=10
+NBArcs=10
+Sommets=[
+Numero=1
+Numero=2
+Numero=3
+Numero=4
+Numero=5
+Numero=6
+Numero=7
+Numero=8
+Numero=9
+Numero=10
+]
+Arcs=[
+Debut=1, Fin=2
+Debut=2, Fin=3
+Debut=3, Fin=4
+Debut=4, Fin=5
+Debut=5, Fin=6
+Debut=6, Fin=7
+Debut=7, Fin=8
+Debut=8, Fin=9
+Debut=9, Fin=10
+Debut=10, Fin=1
+]
