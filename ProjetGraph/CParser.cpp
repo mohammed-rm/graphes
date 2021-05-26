@@ -15,7 +15,7 @@ CParser::CParser(char* pcArg) {
 	piPARSommet = nullptr;
 	uiPARNombreSommet = 0;
 	uiPARNombreArc = 0;
-	strcpy(pcPARNom_fichier, pcArg);
+	strcpy_s(pcPARNom_fichier, strlen(pcArg), pcArg);
 }
 
 CParser::~CParser() {

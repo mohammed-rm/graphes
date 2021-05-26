@@ -52,5 +52,8 @@
     <Text Include="Text.txt">
       <Filter>Fichiers sources</Filter>
     </Text>
+    <Text Include="test.txt">
+      <Filter>Fichiers sources</Filter>
+    </Text>
   </ItemGroup>
 </Project>
